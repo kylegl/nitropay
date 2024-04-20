@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useNitropay, ref, type UseNitropayOptions } from '#imports'
+import { useNitropay, ref } from '#imports'
+// import type { UseNitropayOptions } from '#imports'
 
 const props = defineProps<{
-  config: UseNitropayOptions
+  config: Parameters<typeof useNitropay>[0]
 }>()
 
 const adEl = ref()
