@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  myModule: {},
+  nitropay: {
+    siteId: '1000',
+  },
   devtools: { enabled: true },
 })
