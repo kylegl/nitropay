@@ -1,6 +1,6 @@
 {
   "name": "nuxt-nitropay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nitropay Ad Module for Nuxt.js",
   "repository": "https://github.com/kylegl/nitropay.git",
   "license": "MIT",
