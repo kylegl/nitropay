@@ -20,5 +20,8 @@ defineExpose({ createAd, refreshAd })
 </script>
 
 <template>
-  <div :id="props.config.id" ref="adEl" />
+  <div
+    :id="props.config.id"
+    ref="adEl"
+  />
 </template>

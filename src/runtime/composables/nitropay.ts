@@ -43,16 +43,16 @@ interface NitroAdsOptions {
     icon?: boolean
     wording?: string
     position:
-    | 'bottom-center'
-    | 'bottom-left'
-    | 'bottom-left-side'
-    | 'bottom-right'
-    | 'bottom-right-side'
-    | 'top-center'
-    | 'top-left'
-    | 'top-left-side'
-    | 'top-right'
-    | 'top-right-side'
+      | 'bottom-center'
+      | 'bottom-left'
+      | 'bottom-left-side'
+      | 'bottom-right'
+      | 'bottom-right-side'
+      | 'top-center'
+      | 'top-left'
+      | 'top-left-side'
+      | 'top-right'
+      | 'top-right-side'
   }
   rewarded?: {
     accept?: string
