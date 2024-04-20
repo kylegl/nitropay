@@ -1,7 +1,6 @@
 import type { ComputedRefWithControl, MaybeElementRef, VueInstance } from '@vueuse/core'
 import { useCurrentElement } from '@vueuse/core'
-import { useRuntimeConfig } from '#app'
-import { nextTick, ref, watchEffect, onMounted } from '#imports'
+import { nextTick, ref, watchEffect, onMounted, useRuntimeConfig } from '#imports'
 
 // ref: https://api-docs.nitropay.com/interfaces/_options_.nitroadoptions.html
 interface NitroAdsOptions {
