@@ -24,8 +24,8 @@ A [Nitropay](https://nitropay.com/) Ads module for nuxt
 
 <!-- Highlight some of the features your module provide here -->
 - ✨ &nbsp; One stop shop for setting up Nitropay on your site
-- 📦 &nbsp; NitroAd.vue component
-- 📦 &nbsp; useNitropay composable
+- 📦 &nbsp; `NitroAd.vue` component
+- 📦 &nbsp; `useNitropay` composable
 
 ## Quick Setup
 
@@ -56,7 +56,7 @@ That's it! You can now use Nitropay ads in your Nuxt app ✨
 
 - NitroAd.vue component accepts a prop `config`. Config must have a unique ad `id` and optionally include any of nitropay's ad configuration options.
 
-- The ad will load & refresh automatically. To trigger manually, the component exposes the 'refreshAd' & 'createAd' functions with [defineExpose](https://vuejs.org/api/sfc-script-setup.html#defineexpose).
+- The ad will load & refresh automatically. To trigger manually, the component exposes the `refreshAd` & `loadAd` functions with [defineExpose](https://vuejs.org/api/sfc-script-setup.html#defineexpose).
 
 ```html
 <template>
