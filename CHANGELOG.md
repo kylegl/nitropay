@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.0.7
+
+[compare changes](https://github.com/kylegl/nitropay/compare/v1.0.4...v1.0.7)
+
+### 🏡 Chore
+
+- **release:** V1.0.5 ([3925ef3](https://github.com/kylegl/nitropay/commit/3925ef3))
+- **release:** V1.0.6 ([aee1c96](https://github.com/kylegl/nitropay/commit/aee1c96))
+
+### ❤️ Contributors
+
+- Kyle <lauber.kyle@gmail.com>
+
 ## v1.0.6
 
 [compare changes](https://github.com/kylegl/nitropay/compare/v1.0.4...v1.0.6)
