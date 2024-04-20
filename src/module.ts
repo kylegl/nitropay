@@ -1,19 +1,53 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { addComponent, addImports, createResolver, defineNuxtModule } from '@nuxt/kit'
+import { defu } from 'defu'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+interface ModuleOptions {
+  siteId: string
+  test?: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
-  meta: {
-    name: 'my-module',
-    configKey: 'myModule',
-  },
-  // Default configuration options of the Nuxt module
-  defaults: {},
-  setup(_options, _nuxt) {
-    const resolver = createResolver(import.meta.url)
+  meta: { name: 'nitropay' },
+  defaults: nuxt => ({
+    siteId: 'test',
+    test: nuxt.options.dev && (process.env.NODE_ENV !== 'production'),
+  }),
+  setup(options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    const head = nuxt.options.app.head
+    head.script = head.script ?? []
+
+    const nitroLoadAdScript = `window.nitroAds = window.nitroAds || { createAd: function () { return new Promise(e => { window.nitroAds.queue.push(["createAd", arguments, e]) }) }, addUserToken: function () { window.nitroAds.queue.push(["addUserToken", arguments]) }, queue: [] };`
+
+    head.script.push({
+      'hid': 'nitropay-load-ad-script',
+      'defer': true,
+      'data-cfasync': 'false',
+      'innerHTML': nitroLoadAdScript,
+    })
+
+    head.script.push({
+      'hid': 'nitropay-script',
+      'defer': true,
+      'data-cfasync': 'false',
+      'async': true,
+      'src': `https://s.nitropay.com/ads-${options.siteId}.js`,
+    })
+
+    addImports({
+      name: 'useNitropay',
+      from: resolve('runtime/composables/nitropay.ts'),
+    })
+
+    addComponent({
+      name: 'NitroAd',
+      filePath: resolve('runtime/components/NitroAd.vue'),
+    })
+
+    nuxt.options.runtimeConfig.public.nitropay = defu(
+      nuxt.options.runtimeConfig.public.nitropay,
+      options,
+    )
   },
 })
