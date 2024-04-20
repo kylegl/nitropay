@@ -37,7 +37,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     addImports({
       name: 'useNitropay',
-      from: resolve('runtime/composables/nitropay.ts'),
+      as: 'useNitropay',
+      from: resolve('runtime/composables/nitropay'),
     })
 
     addComponent({
