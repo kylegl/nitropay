@@ -5,6 +5,7 @@
         id: 'home-leaderboard',
         refreshTime: 30,
         renderVisibleOnly: false,
+        demo: true,
         sizes: [
           [
             '970',

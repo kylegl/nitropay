@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import type { UseNitropayOptions } from '../composables/nitropay'
 import { useNitropay, ref } from '#imports'
+// import type { UseNitropayOptions } from '#imports'
 
 const props = defineProps<{
-  config: UseNitropayOptions
+  config: Parameters<typeof useNitropay>[0]
 }>()
 
 const adEl = ref()
 
 const {
-  createAd,
+  loadAd,
   refreshAd,
 } = useNitropay({
   el: adEl,
   ...props.config,
 })
 
-defineExpose({ createAd, refreshAd })
+defineExpose({ loadAd, refreshAd })
 </script>
 
 <template>
