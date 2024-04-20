@@ -118,10 +118,10 @@ export function useNitropay(options: UseNitropayOptions) {
     show.value = false
 
     await nextTick()
-    createAd()
+    loadAd()
   }
 
-  async function createAd() {
+  async function loadAd() {
     show.value = true
 
     await nextTick()
@@ -157,10 +157,10 @@ export function useNitropay(options: UseNitropayOptions) {
   })
 
   if (immediate)
-    onMounted(() => createAd())
+    onMounted(() => loadAd())
 
   return {
     refreshAd,
-    createAd,
+    loadAd,
   }
 }

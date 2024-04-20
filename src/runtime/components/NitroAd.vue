@@ -9,14 +9,14 @@ const props = defineProps<{
 const adEl = ref()
 
 const {
-  createAd,
+  loadAd,
   refreshAd,
 } = useNitropay({
   el: adEl,
   ...props.config,
 })
 
-defineExpose({ createAd, refreshAd })
+defineExpose({ loadAd, refreshAd })
 </script>
 
 <template>
