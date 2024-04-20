@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { UseNitropayOptions } from '../composables/nitropay'
-import { useNitropay, ref } from '#imports'
+import { useNitropay, ref, type UseNitropayOptions } from '#imports'
 
 const props = defineProps<{
   config: UseNitropayOptions
