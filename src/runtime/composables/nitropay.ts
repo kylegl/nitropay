@@ -15,6 +15,7 @@ interface NitroAdsOptions {
     position: 'left' | 'right'
     reduceMobileSize?: boolean
   }
+  format?: 'display' | 'floating' | 'interstital' | 'rewarded' | 'sticky-stack' | 'video-ac' | 'video-nc' | 'video' | 'wallpaper'
   frequencyCap?: number
   geoAllow?: string[]
   geoDeny?: string[]
@@ -69,14 +70,14 @@ interface NitroAdsOptions {
   stickStackSpace?: number
   targeting?: object
   title?: string
-  video?: {
+  video?: Partial<{
     float: 'left' | 'right'
     hidePlaylist: boolean
     initialDelay: number
     interval: number
     mobile: 'compact' | 'full'
     persistMinimizeTime: number
-  }
+  }>
   visibleMargin?: number
 }
 
