@@ -23,5 +23,7 @@ defineExpose({ loadAd, refreshAd })
   <div
     :id="props.config.id"
     ref="adEl"
-  />
+  >
+    <slot />
+  </div>
 </template>
